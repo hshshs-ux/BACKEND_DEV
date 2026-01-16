@@ -1,0 +1,100 @@
+harshit_singh@Harshitsingh:/home$ cd ..
+harshit_singh@Harshitsingh:/$ cd mnt
+harshit_singh@Harshitsingh:/mnt$ cd d
+harshit_singh@Harshitsingh:/mnt/d$ mkdir git-undo-practice
+harshit_singh@Harshitsingh:/mnt/d$ cd git-undo-practice
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git init
+hint: Using 'master' as the name for the initial branch.
+Initialized empty Git repository in /mnt/c/Users/harsh/d/git-undo-practice/.git/
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git branch -M main
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ echo "Git Undo Practice" >> README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git add Readme.md
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git commit -m " Add Readme.md"
+On branch main
+
+Initial commit
+
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git log --oneline
+fatal: your current branch 'main' does not have any commits yet
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ echo "Some new changes" >> README.md
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+        README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git add README.md
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git status
+On branch main
+
+Changes to be committed:
+        new file:   README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git diff --staged
+diff --git a/README.md b/README.md
+new file mode 100644
+@@ -0,0 +1,2 @@
++Git Undo Practice
++Some new changes
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git commit -m "added the new content"
+[main (root-commit) 48120c5] added the new content
+ 1 file changed, 2 insertions(+)
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ echo "more new changes" >> README.md
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git add README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git status
+On branch main
+Changes to be committed:
+        modified:   README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git reset README.md
+Unstaged changes after reset:
+M       README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git status
+On branch main
+Changes not staged for commit:
+        modified:   README.md
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git commit --amend -m "Fixed"
+[main 4d7d08e] Fixed
+ Date: Sun Jan 11 07:35:50 2026 +0000
+ 1 file changed, 2 insertions(+)
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git log --oneline
+4d7d08e (HEAD -> main) Fixed
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git checkout -b revert -demo
+error: unknown switch `e'
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git checkout -b revert-demo
+Switched to a new branch 'revert-demo'
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git add README.md
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git commit -m "Revert changes"
+[revert-demo 0cfb415] Revert changes
+ 1 file changed, 1 insertion(+)
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git revert HEAD
+[revert-demo 351a1de] Revert "Revert changes"
+ 1 file changed, 1 deletion(-)
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git revert HEAD
+[revert-demo 068a4d3] Reapply "Revert changes"
+ 1 file changed, 1 insertion(+)
+
+harshit_singh@Harshitsingh:/mnt/d/git-undo-practice$ git log --online
+fatal: unrecognized argument: --online

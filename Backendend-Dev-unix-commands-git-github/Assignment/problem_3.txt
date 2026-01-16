@@ -1,0 +1,46 @@
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ echo .. > conflict.txt
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git add conflict.txt
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git commit -m "Branch1 change"
+[branch1 4a57721] Branch1 change
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use git push to publish your local commits)
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git checkout -b branch2
+Switched to a new branch 'branch2'
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ echo ..2 > conflict.txt
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git add conflict.txt
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git commit -m "Branch2 change"
+[branch2 a5f07a6] Branch2 change
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use git push to publish your local commits)
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git merge branch1
+Updating 0c0664a..4a57721
+Fast-forward
+ conflict.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git merge branch2
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ nano conflict.txt
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git add conflict.txt
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ git commit -m "Resolved"
+[main c8ea694] Resolved

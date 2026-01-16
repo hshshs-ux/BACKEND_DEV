@@ -1,0 +1,38 @@
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh$ cd d
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d$ cd Backend-Dev
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev$ cd Assignment
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment$ mkdir git-practice
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment$ cd git-practice
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git init
+hint: Using 'master' as the name for the initial branch.
+Initialized empty Git repository in /mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice/.git/
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ touch README.md
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  README.md
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git add README.md
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git commit -m "added the README"
+[master (root-commit) 2f6499d] added the README
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ echo ".." >> README.md
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git status
+On branch master
+Changes not staged for commit:
+  modified: README.md
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git add README.md
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git commit -m "README updated"
+[master 4921272] README updated
+ 1 file changed, 1 insertion(+)
+
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh/d/Backend-Dev/Assignment/git-practice$ git log --oneline
+4921272 (HEAD -> master) README updated
+2f6499d added the README

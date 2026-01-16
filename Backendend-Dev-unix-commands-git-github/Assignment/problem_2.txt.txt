@@ -1,0 +1,96 @@
+harshit_singh@Harshitsingh:/mnt/c/Users/harsh$ cd
+harshit_singh@Harshitsingh:~$ cd ..
+harshit_singh@Harshitsingh:/home$ cd ..
+harshit_singh@Harshitsingh:/$ cd mnt
+harshit_singh@Harshitsingh:/mnt$ cd d
+harshit_singh@Harshitsingh:/mnt/d$ cd Backend-Dev
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ cd assignment
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git branch feature
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git checkout feature
+D       classtask/images/Screenshot 2026-01-08 235351.png
+M       classtask/task1.txt
+Switched to branch 'feature'
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ touch feature.txt
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ echo "Feature work" > feature.txt
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git add feature.txt
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git commit -m "Added the Feature file"
+[feature ac765e5] Added the Feature file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 assignment/feature.txt
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        classtask/task1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git merge feature
+Already up to date.
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git branch -d feature
+error: cannot delete branch 'feature' used by worktree at '/mnt/d/Backend-Dev'
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git branch
+* feature
+  main
+  unix-commands-git-github
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        classtask/task1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git status
+On branch feature
+Changes not staged for commit:
+  deleted:    ../classtask/images/Screenshot 2026-01-08 235351.png
+  modified:   ../classtask/task1.txt
+
+Untracked files:
+  git-practice/
+  ../classtask/git-practice/
+  ../classtask/task1.png
+  ../classtask/task2.txt
+  ../classtask/task3.txt
+  ../git-conflict-practice/
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ git add classtask/task1.txt
+warning: could not open directory 'assignment/classtask/': No such file or directory
+fatal: pathspec 'classtask/task1.txt' did not match any files
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev/assignment$ cd
+harshit_singh@Harshitsingh:~$ cd ..
+harshit_singh@Harshitsingh:/home$ cd ..
+harshit_singh@Harshitsingh:/$ cd mnt
+harshit_singh@Harshitsingh:/mnt$ cd d
+harshit_singh@Harshitsingh:/mnt/d$ cd Backend-Dev
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ git add classtask/task1.txt
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ git commit -m "Work done"
+[feature 0c0664a] Work done
+ 1 file changed, 3 insertions(+)
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ git branch -d feature
+error: the branch 'feature' is not fully merged.
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ git merge feature
+Updating 6e64a0a..0c0664a
+Fast-forward
+ assignment/feature.txt                           |  1 +
+ classtask/images/Screenshot 2026-01-08 235351.png | Bin 0 -> 166522 bytes
+ classtask/task1.txt                              | 26 +++++++++++++++++++
+ 3 files changed, 27 insertions(+)
+ create mode 100644 assignment/feature.txt
+ create mode 100644 classtask/images/Screenshot 2026-01-08 235351.png
+ create mode 100644 classtask/task1.txt
+
+harshit_singh@Harshitsingh:/mnt/d/Backend-Dev$ git branch -d feature
+Deleted branch feature (was 0c0664a).
