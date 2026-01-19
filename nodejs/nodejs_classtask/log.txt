@@ -1,0 +1,46 @@
+1768243664430: / New request rec
+1768243858109: GET / New request received
+1768243858310: GET /favicon.ico New request received
+1768243978954: GET /
+1768243979114: GET /favicon.ico
+1768243987006: GET /about
+1768243987059: GET /favicon.ico
+1768244005899: GET /contact
+1768244005959: GET /favicon.ico
+1768244145715: GET /
+1768244145827: GET /favicon.ico
+1768244153438: GET /about
+1768244155643: GET /favicon.ico
+1768244162619: GET /contact
+1768244162659: GET /favicon.ico
+1768244168721: GET /test
+1768244168791: GET /favicon.ico
+1768281208380: GET /jai
+1768281208614: GET /favicon.ico
+1768281230954: GET /favicon.ico
+1768281236200: GET /
+1768281236259: GET /favicon.ico
+1768282231353: GET /
+1768282231519: GET /favicon.ico
+1768282756851: GET /
+1768282757021: GET /favicon.ico
+1768282789235: GET /
+1768282789235: Response sent: "Home page" for /
+1768282789347: GET /favicon.ico
+1768282809605: GET /about
+1768282809605: Response sent: "About page" for /about
+1768282810251: GET /favicon.ico
+1768283028634: GET /about
+1768283028634: Response sent: "About page" for /about
+1768283028738: GET /favicon.ico
+1768283041087: GET /
+1768283041087: Response sent: "Home page" for /
+1768283041174: GET /favicon.ico
+1768283046394: GET /about
+1768283046394: Response sent: "About page" for /about
+1768283049522: GET /contact
+1768283049522: Response sent: "Contact page" for /contact
+1768283050333: GET /favicon.ico
+1768283142207: GET /
+1768283142207: Response sent: "Home page" for /
+1768283142756: GET /favicon.ico
