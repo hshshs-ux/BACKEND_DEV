@@ -1,0 +1,37 @@
+const fs = require('fs');
+
+//one line asnwers
+const answers = `1. Difference between synchronous and asynchronous file operations:
+Synchronous operations like readFileSync block the code until done - everything waits. Asynchronous like readFile use callbacks and don't block, so other code runs while file work happens in background. Use async for better performance in apps.
+
+2. When to use file streams instead of reading the entire file:
+Use streams with createReadStream when files are big (like videos or logs > few MB) because readFile loads everything into memory at once, which can crash your app. Streams read in small chunks to save memory.
+
+3. Purpose of the utf8 encoding parameter:
+utf8 tells Node to read/write file as normal text strings instead of raw bytes/buffer. Without it, you get Buffer objects with weird hex numbers, not readable text.
+
+4. Common file system error codes and their meaning:
+ENOENT: file or folder not found. EACCES: no permission to read/write. ENOENT or EISDIR: trying to read directory as file. Always check err.code in callbacks.
+
+5. How to safely delete a directory with all its contents:
+Use fs.rmdir(path, {recursive: true}, callback) or newer fs.rm. The recursive option deletes folder + all files/subfolders inside safely without manual looping.
+
+6. Concept of piping in streams with an example:
+Piping connects streams so data flows automatically from read to write without manual chunk handling. Example: fs.createReadStream('input.txt').pipe(fs.createWriteStream('copy.txt')) - copies file efficiently.
+
+7. Importance of handling errors in file operations:
+Files can be missing, no permissions, or disk full - without error checks (if(err)), your app crashes. Always use callbacks or try-catch to show nice messages and keep running.
+
+8. Difference between writeFile and appendFile:
+writeFile overwrites the whole file with new content (replaces everything). appendFile adds new text at the end without deleting old content (good for logs).`;
+
+// Writint it into the file using fs.writefile
+fs.writeFile('answers.txt', answers, 'utf8', (err) => {
+  // for error
+  if (err) {
+    console.log('Oops, write failed:', err.message);
+    return;
+  }
+//   added successfully
+  console.log('Saved answers to answers.txt - ready for reading!');
+});
